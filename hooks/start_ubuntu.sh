@@ -30,8 +30,6 @@ modprobe -r drm
 # Unbind the GPU from display driver
 virsh nodedev-detach $VIRSH_GPU_VIDEO
 virsh nodedev-detach $VIRSH_GPU_AUDIO
-virsh nodedev-detach $VIRSH_GPU_USB
-virsh nodedev-detach $VIRSH_GPU_SERIAL
 
 # Load VFIO kernel module
 modprobe vfio
