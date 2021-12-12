@@ -2,5 +2,5 @@
 sudo wget 'https://raw.githubusercontent.com/yobson1/vfio/main/config/isolated.xml' -O /tmp/isolated.xml
 virsh net-define /tmp/isolated.xml
 virsh net-autostart isolated
-virsh net-start isolated
+sudo virsh net-start isolated
 sudo rm /tmp/isolated.xml
