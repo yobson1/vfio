@@ -6,12 +6,11 @@ set -x
 source "/etc/libvirt/hooks/kvm.conf"
 
 # Stop display manager (KDE specific)
-systemctl stop gdm
+systemctl stop lightdm
 
 # Unbind VTconsoles
 echo 0 > /sys/class/vtconsole/vtcon0/bind
 echo 0 > /sys/class/vtconsole/vtcon1/bind
-
 
 # Unbind EFI-Framebuffer
 echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/unbind
@@ -38,4 +37,3 @@ virsh nodedev-detach $VIRSH_GPU_SERIAL
 modprobe vfio
 modprobe vfio_pci
 modprobe vfio_iommu_type1
-

@@ -13,8 +13,8 @@ sudo mkdir -p /etc/libvirt/hooks/qemu.d/win10/prepare/begin
 sudo mkdir -p /etc/libvirt/hooks/qemu.d/win10/release/end
 
 # Installing hook scripts
-sudo wget 'https://raw.githubusercontent.com/yobson1/vfio/main/hooks/start.sh' -O /etc/libvirt/hooks/qemu.d/win10/prepare/begin/start.sh
-sudo wget 'https://raw.githubusercontent.com/yobson1/vfio/main/hooks/revert.sh' -O /etc/libvirt/hooks/qemu.d/win10/release/end/revert.sh
+sudo wget 'https://raw.githubusercontent.com/yobson1/vfio/main/hooks/start_arch.sh' -O /etc/libvirt/hooks/qemu.d/win10/prepare/begin/start.sh
+sudo wget 'https://raw.githubusercontent.com/yobson1/vfio/main/hooks/revert_arch.sh' -O /etc/libvirt/hooks/qemu.d/win10/release/end/revert.sh
 sudo wget 'https://raw.githubusercontent.com/yobson1/vfio/main/hooks/cpu_mode_performance.sh' -O /etc/libvirt/hooks/qemu.d/win10/prepare/begin/cpu_mode_performance.sh
 sudo wget 'https://raw.githubusercontent.com/yobson1/vfio/main/hooks/cpu_mode_ondemand.sh' -O /etc/libvirt/hooks/qemu.d/win10/release/end/cpu_mode_ondemand.sh
 
