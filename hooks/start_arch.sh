@@ -20,12 +20,10 @@ sleep 5
 
 # Unload all Nvidia drivers
 modprobe -r nvidia_drm
-modprobe -r nvidia_modeset
-modprobe -r drm_kms_helper
 modprobe -r nvidia_uvm
+modprobe -r nvidia_modeset
 modprobe -r nvidia
 modprobe -r i2c_nvidia_gpu
-modprobe -r drm
 
 # Unbind the GPU from display driver
 virsh nodedev-detach $VIRSH_GPU_VIDEO

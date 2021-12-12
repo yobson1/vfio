@@ -15,7 +15,7 @@ virsh nodedev-reattach $VIRSH_GPU_AUDIO
 
 # Rebind VT consoles
 echo 1 > /sys/class/vtconsole/vtcon0/bind
-echo 0 > /sys/class/vtconsole/vtcon1/bind
+echo 1 > /sys/class/vtconsole/vtcon1/bind
 
 nvidia-xconfig --query-gpu-info > /dev/null 2>&1
 # Re-Bind EFI-Framebuffer
@@ -23,12 +23,10 @@ echo "efi-framebuffer.0" > /sys/bus/platform/drivers/efi-framebuffer/bind
 
 #Load nvidia driver
 modprobe nvidia_drm
-modprobe nvidia_modeset
-modprobe drm_kms_helper
 modprobe nvidia_uvm
+modprobe nvidia_modeset
 modprobe nvidia
 modprobe i2c_nvidia_gpu
-modprobe drm
 
 # Restart Display Manager
 systemctl start lightdm

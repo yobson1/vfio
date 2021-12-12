@@ -1,5 +1,5 @@
 # Installing prerequisites
-sudo pacman -Syu wget qemu-headless libvirt virt-manager bridge-utils iptables-nft dnsmasq ovmf
+sudo pacman -Syu wget qemu libvirt virt-manager bridge-utils iptables-nft dnsmasq ovmf vde2
 
 # Installing libvirt qemu hooks
 sudo mkdir -p /etc/libvirt/hooks
@@ -23,9 +23,9 @@ sudo chmod +x /etc/libvirt/hooks/qemu.d/win10/prepare/begin/cpu_mode_performance
 sudo chmod +x /etc/libvirt/hooks/qemu.d/win10/release/end/cpu_mode_ondemand.sh
 
 # Editing grub
-# Ryzen settings: iommu=1 amd_iommu=on rd.driver.pre=vfio-pc
+# Ryzen settings: amd_iommu=on iommu=pt
 # Intel settings: intel_iommu=on
-echo 'You are going to edit the GRUB_CMDLINE_LINUX_DEFAULT value. If you are on Ryzen add "iommu=1 amd_iommu=on rd.driver.pre=vfio-pc" if you are on Intel add intel_iommu=on'
+echo 'You are going to edit the GRUB_CMDLINE_LINUX_DEFAULT value. If you are on Ryzen add "amd_iommu=on iommu=pt" if you are on Intel add intel_iommu=on'
 read -n 1 -s -r -p 'Press any key to continue'
 sudo nano /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
