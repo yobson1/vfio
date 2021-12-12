@@ -17,6 +17,10 @@ sudo wget 'https://raw.githubusercontent.com/yobson1/vfio/main/hooks/start_arch.
 sudo wget 'https://raw.githubusercontent.com/yobson1/vfio/main/hooks/revert_arch.sh' -O /etc/libvirt/hooks/qemu.d/win10/release/end/revert.sh
 sudo wget 'https://raw.githubusercontent.com/yobson1/vfio/main/hooks/cpu_mode_performance.sh' -O /etc/libvirt/hooks/qemu.d/win10/prepare/begin/cpu_mode_performance.sh
 sudo wget 'https://raw.githubusercontent.com/yobson1/vfio/main/hooks/cpu_mode_ondemand.sh' -O /etc/libvirt/hooks/qemu.d/win10/release/end/cpu_mode_ondemand.sh
+sudo chmod +x /etc/libvirt/hooks/qemu.d/win10/prepare/begin/start.sh
+sudo chmod +x /etc/libvirt/hooks/qemu.d/win10/release/end/revert.sh
+sudo chmod +x /etc/libvirt/hooks/qemu.d/win10/prepare/begin/cpu_mode_performance.sh
+sudo chmod +x /etc/libvirt/hooks/qemu.d/win10/release/end/cpu_mode_ondemand.sh
 
 # Editing grub
 # Ryzen settings: iommu=1 amd_iommu=on rd.driver.pre=vfio-pc
