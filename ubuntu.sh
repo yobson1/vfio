@@ -22,5 +22,6 @@ sudo wget 'https://raw.githubusercontent.com/yobson1/vfio/main/hooks/cpu_mode_on
 # Ryzen settings: iommu=1 amd_iommu=on rd.driver.pre=vfio-pc
 # Intel settings: intel_iommu=on
 echo 'You are going to edit the GRUB_CMDLINE_LINUX_DEFAULT value. If you are on Ryzen add "iommu=1 amd_iommu=on rd.driver.pre=vfio-pc" if you are on Intel add intel_iommu=on'
+read -n 1 -s -r -p 'Press any key to continue'
 sudo nano /etc/default/grub
 sudo update-grub
