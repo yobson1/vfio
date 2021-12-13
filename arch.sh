@@ -1,5 +1,5 @@
 # Installing prerequisites
-sudo pacman -Syu wget qemu libvirt virt-manager bridge-utils iptables-nft dnsmasq ovmf vde2
+sudo pacman -S qemu libvirt virt-manager bridge-utils dnsmasq edk2-ovmf vde2 qemu-arch-extra iptables-nft
 
 # Installing libvirt qemu hooks
 sudo mkdir -p /etc/libvirt/hooks
