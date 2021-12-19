@@ -45,7 +45,13 @@
   <sysinfo type="smbios">
     <bios>
       <entry name="vendor">MSI</entry>
+      <entry name="version">MS-7C35ABC123</entry>
     </bios>
+    <system>
+      <entry name="manufacturer">Wanker's PCs</entry>
+      <entry name="product">Johnson</entry>
+      <entry name="version">2.0.0</entry>
+    </system>
     <baseBoard>
       <entry name="manufacturer">Micro-Star International Co., Ltd.</entry>
       <entry name="product">MEG X570 UNIFY (MS-7C35)</entry>
@@ -93,6 +99,7 @@
     <feature policy="require" name="topoext"/>
     <feature policy="require" name="pdpe1gb"/>
     <feature policy="disable" name="hypervisor"/>
+    <feature policy="disable" name="aes"/>
   </cpu>
   <clock offset="localtime">
     <timer name="rtc" tickpolicy="catchup"/>
@@ -111,9 +118,9 @@
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type="file" device="disk">
       <driver name="qemu" type="raw" cache="writeback"/>
-      <source file="/var/lib/libvirt/images/win10.img"/>
+      <source file="/mnt/mx500/images/win10.img"/>
       <target dev="vda" bus="virtio"/>
-      <serial>8EED1745DCDE</serial>
+      <serial>8EFD1845CCAE</serial>
       <boot order="1"/>
       <address type="pci" domain="0x0000" bus="0x04" slot="0x00" function="0x0"/>
     </disk>
