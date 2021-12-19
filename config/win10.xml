@@ -10,9 +10,10 @@
   <memory unit="KiB">29360128</memory>
   <currentMemory unit="KiB">29360128</currentMemory>
   <vcpu placement="static">24</vcpu>
-  <iothreads>1</iothreads>
+  <iothreads>2</iothreads>
   <iothreadids>
     <iothread id="1"/>
+    <iothread id="2"/>
   </iothreadids>
   <cputune>
     <vcpupin vcpu="0" cpuset="4"/>
@@ -98,7 +99,6 @@
     <cache mode="passthrough"/>
     <feature policy="require" name="topoext"/>
     <feature policy="require" name="pdpe1gb"/>
-    <feature policy="disable" name="hypervisor"/>
     <feature policy="disable" name="aes"/>
   </cpu>
   <clock offset="localtime">
