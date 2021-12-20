@@ -10,10 +10,12 @@
   <memory unit="KiB">29360128</memory>
   <currentMemory unit="KiB">29360128</currentMemory>
   <vcpu placement="static">24</vcpu>
-  <iothreads>2</iothreads>
+  <iothreads>4</iothreads>
   <iothreadids>
     <iothread id="1"/>
     <iothread id="2"/>
+    <iothread id="3"/>
+    <iothread id="4"/>
   </iothreadids>
   <cputune>
     <vcpupin vcpu="0" cpuset="4"/>
@@ -41,7 +43,10 @@
     <vcpupin vcpu="22" cpuset="15"/>
     <vcpupin vcpu="23" cpuset="31"/>
     <emulatorpin cpuset="0-1,16-17"/>
-    <iothreadpin iothread="1" cpuset="2-3,18-19"/>
+    <iothreadpin iothread="1" cpuset="2"/>
+    <iothreadpin iothread="2" cpuset="18"/>
+    <iothreadpin iothread="3" cpuset="3"/>
+    <iothreadpin iothread="4" cpuset="19"/>
   </cputune>
   <sysinfo type="smbios">
     <bios>
