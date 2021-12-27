@@ -1,6 +1,6 @@
 <domain type="kvm">
   <name>win10</name>
-  <uuid>39708e8b-f415-493b-a13a-f3cdb1f4775b</uuid>
+  <uuid>ae86a465-4348-4371-9e30-0de9be34ce00</uuid>
   <title>Cheeto</title>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
@@ -73,8 +73,8 @@
     </chassis>
   </sysinfo>
   <os>
-    <type arch="x86_64" machine="pc-q35-6.0">hvm</type>
-    <loader readonly="yes" type="pflash">/usr/share/OVMF/OVMF_CODE_4M.fd</loader>
+    <type arch="x86_64" machine="pc-q35-6.2">hvm</type>
+    <loader readonly="yes" type="pflash">/usr/share/edk2-ovmf/x64/OVMF_CODE.fd</loader>
     <nvram>/var/lib/libvirt/qemu/nvram/win10_VARS.fd</nvram>
     <bootmenu enable="yes"/>
     <smbios mode="sysinfo"/>
@@ -230,7 +230,6 @@
       <source>
         <address domain="0x0000" bus="0x2d" slot="0x00" function="0x0"/>
       </source>
-      <rom file="/usr/share/vgabios/GA102PATCHED.rom"/>
       <address type="pci" domain="0x0000" bus="0x06" slot="0x00" function="0x0"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
