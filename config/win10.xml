@@ -51,22 +51,22 @@
   <sysinfo type="smbios">
     <bios>
       <entry name="vendor">MSI</entry>
-      <entry name="version">MS-7C35ABC123</entry>
+      <entry name="version">MS-7C35EFG234</entry>
     </bios>
     <system>
-      <entry name="manufacturer">Wanker's PCs</entry>
-      <entry name="product">Johnson</entry>
+      <entry name="manufacturer">yep</entry>
+      <entry name="product">lole</entry>
       <entry name="version">2.0.0</entry>
     </system>
     <baseBoard>
       <entry name="manufacturer">Micro-Star International Co., Ltd.</entry>
       <entry name="product">MEG X570 UNIFY (MS-7C35)</entry>
       <entry name="version">2.0</entry>
-      <entry name="serial">K816752453</entry>
+      <entry name="serial">K825530231</entry>
     </baseBoard>
     <chassis>
       <entry name="manufacturer">To be filled by O.E.M.</entry>
-      <entry name="version">2.0</entry>
+      <entry name="version">2.1</entry>
       <entry name="serial">To be filled by O.E.M.</entry>
       <entry name="asset">To be filled by O.E.M.</entry>
       <entry name="sku">To be filled by O.E.M.</entry>
@@ -82,7 +82,7 @@
   <features>
     <acpi/>
     <apic/>
-    <hyperv>
+    <hyperv mode="custom">
       <relaxed state="on"/>
       <vapic state="on"/>
       <spinlocks state="on" retries="8191"/>
@@ -132,9 +132,16 @@
       <driver name="qemu" type="raw" cache="writeback"/>
       <source file="/mnt/mx500/images/win10.img"/>
       <target dev="vda" bus="virtio"/>
-      <serial>8EFD1845CCAE</serial>
+      <serial>8BE4C31BDDAF</serial>
       <boot order="1"/>
       <address type="pci" domain="0x0000" bus="0x04" slot="0x00" function="0x0"/>
+    </disk>
+    <disk type="file" device="cdrom">
+      <driver name="qemu" type="raw"/>
+      <source file="/var/lib/libvirt/images/virtio-win-0.1.215.iso"/>
+      <target dev="sda" bus="sata"/>
+      <readonly/>
+      <address type="drive" controller="0" bus="0" target="0" unit="0"/>
     </disk>
     <controller type="usb" index="0" model="qemu-xhci" ports="15">
       <address type="pci" domain="0x0000" bus="0x02" slot="0x00" function="0x0"/>
