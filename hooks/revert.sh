@@ -9,24 +9,10 @@ modprobe -r vfio_pci
 modprobe -r vfio_iommu_type1
 modprobe -r vfio
 
-# Re-Bind GPU to AMD Driver
+# Re-Bind GPU to host
 virsh nodedev-reattach $VIRSH_GPU_VIDEO
 virsh nodedev-reattach $VIRSH_GPU_AUDIO
+# Re-Bind SSD to nvme
+virsh nodedev-reattach $VIRSH_NVME_SSD
 
-# Rebind VT consoles
-echo 1 > /sys/class/vtconsole/vtcon0/bind
-echo 1 > /sys/class/vtconsole/vtcon1/bind
-
-nvidia-xconfig --query-gpu-info > /dev/null 2>&1
-# Re-Bind EFI-Framebuffer
-echo "efi-framebuffer.0" > /sys/bus/platform/drivers/efi-framebuffer/bind
-
-#Load nvidia driver
-modprobe nvidia_drm
-modprobe nvidia_uvm
-modprobe nvidia_modeset
-modprobe nvidia
-modprobe i2c_nvidia_gpu
-
-# Restart Display Manager
-systemctl start lightdm
+systemctl start nvidia-persistenced
